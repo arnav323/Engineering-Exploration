@@ -1,0 +1,654 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+   COLORS
+========================= */
+
+:root {
+    --navy: #201d49;
+    --cream: #fffceb;
+    --lavender: #f5f3ff;
+    --mint: #eafbf4;
+
+    --purple: #7026a0;
+    --green: #13aa86;
+    --orange: #f47b20;
+    --yellow: #f0a315;
+
+    --ink: #29244e;
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    color: var(--ink);
+    background: #161532;
+    overflow: hidden;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.top-nav {
+    position: fixed;
+    z-index: 10;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 5vw;
+
+    color: white;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+}
+
+.brand {
+    opacity: 0.65;
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-controls button {
+    border: 1px solid #ffffff50;
+    color: white;
+    background: transparent;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.nav-controls button:hover {
+    background: #ffffff20;
+}
+
+#pageCount {
+    min-width: 60px;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* =========================
+   SLIDES
+========================= */
+
+main {
+    width: 100vw;
+    height: 100vh;
+}
+
+.slide {
+    position: absolute;
+
+    inset: 0;
+
+    padding: 8vh 5vw 7vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateX(3%);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease,
+        visibility 0.5s;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+
+/* Backgrounds */
+
+.cover,
+.closing {
+    background: var(--navy);
+    color: white;
+}
+
+.cream {
+    background: var(--cream);
+}
+
+.lavender {
+    background: var(--lavender);
+}
+
+.mint {
+    background: var(--mint);
+}
+
+
+/* =========================
+   COVER PAGE
+========================= */
+
+.cover-top {
+    position: absolute;
+
+    top: 8.5%;
+    left: 5vw;
+    right: 5vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: var(--yellow);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.cover-top i {
+    display: block;
+
+    width: 100px;
+    height: 5px;
+
+    background: var(--green);
+}
+
+.cover-content {
+    margin-top: 3vh;
+}
+
+h1 {
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    line-height: 1.08;
+
+    font-weight: 600;
+    letter-spacing: -0.03em;
+
+    margin: 0 0 8vh;
+}
+
+.short-line {
+    width: 64px;
+    height: 6px;
+
+    margin-bottom: 26px;
+}
+
+.orange {
+    background: var(--orange);
+}
+
+.student-details {
+    font-size: 18px;
+    line-height: 1.6;
+
+    color: #bdb9d8;
+}
+
+.student-details p {
+    margin: 0;
+}
+
+.student-details strong {
+    color: #fff3c7;
+}
+
+
+/* =========================
+   COLOR STRIPES
+========================= */
+
+.color-stripes {
+    position: absolute;
+
+    bottom: 7.5%;
+    left: 5vw;
+    right: 5vw;
+
+    display: flex;
+    gap: 10px;
+
+    height: 5px;
+}
+
+.color-stripes span {
+    display: block;
+    flex: 1;
+}
+
+.color-stripes .purple {
+    flex: 3;
+    background: var(--purple);
+}
+
+.color-stripes .green {
+    background: var(--green);
+}
+
+.color-stripes .orange {
+    background: var(--orange);
+}
+
+.color-stripes .yellow {
+    background: var(--yellow);
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+header {
+    margin-bottom: 5vh;
+}
+
+.eyebrow {
+    margin: 0 0 10px;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.orange-text {
+    color: #d96625;
+}
+
+.green-text {
+    color: #239a7e;
+}
+
+h2 {
+    font-size: clamp(2rem, 3.3vw, 3.2rem);
+    line-height: 1.1;
+
+    font-weight: 600;
+
+    margin: 0;
+
+    color: #3d175e;
+}
+
+
+/* =========================
+   CONTENT LAYOUT
+========================= */
+
+.content-grid {
+    display: grid;
+
+    grid-template-columns: 1.05fr 0.95fr;
+
+    gap: 5vw;
+
+    align-items: center;
+}
+
+.content-grid.reverse {
+    grid-template-columns: 0.95fr 1.05fr;
+}
+
+.copy {
+    font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+    line-height: 1.55;
+
+    font-weight: 300;
+}
+
+.copy p {
+    margin: 0 0 1.5em;
+}
+
+
+/* =========================
+   VIDEO PLACEHOLDERS
+========================= */
+
+.media-frame {
+    position: relative;
+
+    border: 2px solid var(--green);
+
+    min-height: 300px;
+    aspect-ratio: 4 / 3;
+
+    background: #dedee5;
+
+    overflow: hidden;
+}
+
+.lavender .media-frame {
+    border-color: var(--purple);
+}
+
+.mint .media-frame {
+    border-color: var(--yellow);
+}
+
+.media-frame video {
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.media-frame.has-video video {
+    display: block;
+}
+
+.media-frame.has-video .media-placeholder {
+    display: none;
+}
+
+.media-placeholder {
+    height: 100%;
+    min-height: 300px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    color: #5d5971;
+
+    background: linear-gradient(
+        135deg,
+        #e4e3eb,
+        #d6d3df
+    );
+
+    text-align: center;
+}
+
+.media-placeholder span {
+    font-weight: 600;
+    letter-spacing: 0.1em;
+
+    font-size: 13px;
+}
+
+.media-placeholder small {
+    font-size: 12px;
+    opacity: 0.75;
+}
+
+
+/* =========================
+   BOTTOM ACCENT LINES
+========================= */
+
+.bottom-stripes {
+    position: absolute;
+
+    bottom: 7%;
+    left: 5vw;
+
+    display: flex;
+    gap: 8px;
+
+    height: 5px;
+    width: 200px;
+}
+
+.bottom-stripes span {
+    display: block;
+    flex: 1;
+}
+
+.purple {
+    background: var(--purple);
+}
+
+.green {
+    background: var(--green);
+}
+
+.yellow {
+    background: var(--yellow);
+}
+
+
+/* =========================
+   SKILLS PAGE
+========================= */
+
+.skills {
+    width: min(600px, 70%);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.skill-card {
+    background: white;
+
+    padding: 25px 28px;
+
+    box-shadow: 0 8px 30px #3d175e0a;
+}
+
+.skill-card h3 {
+    margin: 0 0 8px;
+
+    color: var(--purple);
+
+    font-size: 1.3rem;
+}
+
+.skill-card:nth-child(2) h3 {
+    color: #d88328;
+}
+
+.skill-card p {
+    margin: 0;
+
+    font-size: 1.15rem;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   THANK YOU PAGE
+========================= */
+
+.closing {
+    align-items: center;
+    text-align: center;
+}
+
+.closing h1 {
+    margin: 0;
+
+    font-size: clamp(4rem, 8vw, 7rem);
+}
+
+.closing p {
+    color: #aaa6ca;
+    font-size: 1.2rem;
+}
+
+.closing-mark {
+    display: flex;
+    gap: 8px;
+
+    margin-bottom: 28px;
+
+    width: 100px;
+    height: 6px;
+}
+
+.closing-mark span {
+    flex: 1;
+}
+
+
+/* =========================
+   PAGE DOTS
+========================= */
+
+.page-dots {
+    position: fixed;
+    z-index: 10;
+
+    right: 24px;
+    bottom: 50%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.page-dots button {
+    width: 7px;
+    height: 7px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #8d89a5;
+
+    opacity: 0.45;
+
+    padding: 0;
+
+    cursor: pointer;
+}
+
+.page-dots button.active {
+    opacity: 1;
+
+    background: var(--orange);
+
+    transform: scale(1.4);
+}
+
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 760px) {
+
+    body {
+        overflow: hidden;
+    }
+
+    .slide {
+        padding: 10vh 7vw 8vh;
+    }
+
+    .cover-top {
+        left: 7vw;
+        right: 7vw;
+    }
+
+    .cover-top i {
+        width: 45px;
+    }
+
+    h1 {
+        font-size: clamp(2.4rem, 10vw, 3.4rem);
+    }
+
+    h2 {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+    }
+
+    header {
+        margin-bottom: 3vh;
+    }
+
+    .content-grid,
+    .content-grid.reverse {
+        display: flex;
+        flex-direction: column;
+
+        gap: 2.5vh;
+
+        align-items: stretch;
+    }
+
+    .copy {
+        font-size: 1rem;
+        line-height: 1.45;
+    }
+
+    .copy p {
+        margin-bottom: 1em;
+    }
+
+    .media-frame,
+    .media-placeholder {
+        min-height: 190px;
+        aspect-ratio: 16 / 9;
+    }
+
+    .skills {
+        width: 100%;
+        gap: 12px;
+    }
+
+    .skill-card {
+        padding: 18px;
+    }
+
+    .skill-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .skill-card p {
+        font-size: 1rem;
+    }
+
+    .page-dots {
+        right: 12px;
+    }
+
+    .bottom-stripes {
+        bottom: 4%;
+    }
+
+}

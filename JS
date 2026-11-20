@@ -1,21 +1,4 @@
 // ======================================
-// VIDEO LINKS
-// Paste your video URLs inside the quotes.
-// Leave blank to display a placeholder.
-// ======================================
-
-const VIDEO_LINKS = {
-
-    video1: "",  // Activity 01 - LED interfacing
-
-    video2: "",  // Activities 02 & 03 - Bluetooth
-
-    video3: ""   // Activities 04 & 05 - Ultrasonic sensor
-
-};
-
-
-// ======================================
 // SLIDE NAVIGATION
 // ======================================
 
@@ -28,7 +11,9 @@ const pageCount = document.getElementById("pageCount");
 let current = 0;
 
 
-// Create navigation dots
+// ======================================
+// CREATE NAVIGATION DOTS
+// ======================================
 
 slides.forEach((slide, index) => {
 
@@ -49,16 +34,18 @@ slides.forEach((slide, index) => {
 
 });
 
+
 const dots = dotsContainer.querySelectorAll("button");
 
 
 // ======================================
-// SHOW SLIDE FUNCTION
+// SHOW SLIDE
 // ======================================
 
 function showSlide(index) {
 
     current = (index + slides.length) % slides.length;
+
 
     slides.forEach((slide, i) => {
 
@@ -69,6 +56,7 @@ function showSlide(index) {
 
     });
 
+
     dots.forEach((dot, i) => {
 
         dot.classList.toggle(
@@ -78,6 +66,7 @@ function showSlide(index) {
 
     });
 
+
     pageCount.textContent =
         `${String(current + 1).padStart(2, "0")} / ` +
         `${String(slides.length).padStart(2, "0")}`;
@@ -86,7 +75,7 @@ function showSlide(index) {
 
 
 // ======================================
-// NEXT AND PREVIOUS BUTTONS
+// PREVIOUS BUTTON
 // ======================================
 
 document
@@ -97,6 +86,10 @@ document
 
     });
 
+
+// ======================================
+// NEXT BUTTON
+// ======================================
 
 document
     .getElementById("nextBtn")
@@ -119,6 +112,7 @@ document.addEventListener("keydown", (event) => {
 
     }
 
+
     if (event.key === "ArrowLeft") {
 
         showSlide(current - 1);
@@ -129,25 +123,21 @@ document.addEventListener("keydown", (event) => {
 
 
 // ======================================
-// VIDEO LINK SETUP
+// VIDEO PLACEHOLDER HANDLING
 // ======================================
 
 document
     .querySelectorAll(".media-frame")
     .forEach((frame) => {
 
-        const key = frame.dataset.video;
-
-        const url = VIDEO_LINKS[key];
-
         const video = frame.querySelector("video");
 
+        const videoSource = video.getAttribute("src");
 
-        // If a video link exists
 
-        if (url && url.trim() !== "") {
+        // Show video if a source has been added
 
-            video.src = url.trim();
+        if (videoSource && videoSource.trim() !== "") {
 
             frame.classList.add("has-video");
 

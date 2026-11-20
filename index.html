@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Exploration - E Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="top-nav">
+        <div class="brand">ENGINEERING EXPLORATION</div>
+
+        <div class="nav-controls">
+            <button id="prevBtn">←</button>
+            <span id="pageCount">01 / 06</span>
+            <button id="nextBtn">→</button>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- PAGE 1: COVER -->
+        <section class="slide cover active">
+
+            <div class="cover-top">
+                <span>FIRST-YEAR ENGINEERING SUBMISSION</span>
+                <i></i>
+            </div>
+
+            <div class="cover-content">
+
+                <h1>
+                    Engineering Exploration<br>
+                    – E-Portfolio
+                </h1>
+
+                <div class="short-line orange"></div>
+
+                <div class="student-details">
+                    <p><strong>Name: Arnav Chatterjee</strong></p>
+                    <p>Roll Number: 2K26CSU01NN008</p>
+                    <p>Class: 1A G1</p>
+                </div>
+
+            </div>
+
+            <div class="color-stripes">
+                <span class="purple"></span>
+                <span class="green"></span>
+                <span class="orange"></span>
+                <span class="yellow"></span>
+            </div>
+
+        </section>
+
+
+        <!-- PAGE 2: ACTIVITY 1 -->
+        <section class="slide cream">
+
+            <header>
+                <p class="eyebrow orange-text">
+                    ACTIVITY 01 — HARDWARE PROTOTYPING
+                </p>
+
+                <h2>LED Interfacing with Breadboard</h2>
+            </header>
+
+            <div class="content-grid">
+
+                <div class="copy">
+
+                    <p>
+                        External LEDs were interfaced onto a solderless
+                        breadboard using an Arduino UNO microcontroller
+                        and programmed via the Arduino IDE.
+                        Current-limiting resistors were integrated
+                        in series to safeguard circuit components.
+                    </p>
+
+                    <p>
+                        Digital output pins were configured to supply
+                        controlled voltage signals, establishing
+                        foundational understanding of breadboard
+                        continuity, polarity alignment, and
+                        hardware-software execution.
+                    </p>
+
+                </div>
+
+                <div class="media-frame" data-video="video1">
+
+                    <video controls playsinline></video>
+
+                    <div class="media-placeholder">
+                        <span>VIDEO PLACEHOLDER</span>
+                        <small>Add your video link in script.js</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="bottom-stripes">
+                <span class="purple"></span>
+                <span class="green"></span>
+            </div>
+
+        </section>
+
+
+        <!-- PAGE 3: ACTIVITY 2 AND 3 -->
+        <section class="slide lavender">
+
+            <header>
+                <p class="eyebrow green-text">
+                    ACTIVITIES 02 & 03 — DIGITAL LOGIC & WIRELESS CONTROL
+                </p>
+
+                <h2>
+                    Binary Logic, Bluetooth LED Control
+                    and App Development
+                </h2>
+            </header>
+
+            <div class="content-grid">
+
+                <div class="copy">
+
+                    <p>
+                        The onboard Arduino UNO LED (pin 13) was
+                        programmed to execute blinking patterns,
+                        verifying binary states: binary 1 (HIGH)
+                        turns the LED ON, while binary 0 (LOW)
+                        turns it OFF.
+                    </p>
+
+                    <p>
+                        Wireless control was achieved by interfacing
+                        the HC-05 Bluetooth module via UART pins
+                        (TX/RX) with a custom mobile application
+                        to transmit serial commands for remote
+                        LED switching.
+                    </p>
+
+                </div>
+
+                <div class="media-frame" data-video="video2">
+
+                    <video controls playsinline></video>
+
+                    <div class="media-placeholder">
+                        <span>VIDEO PLACEHOLDER</span>
+                        <small>Add your video link in script.js</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="bottom-stripes">
+                <span class="orange"></span>
+                <span class="yellow"></span>
+            </div>
+
+        </section>
+
+
+        <!-- PAGE 4: ACTIVITY 4 AND 5 -->
+        <section class="slide mint">
+
+            <header>
+                <p class="eyebrow orange-text">
+                    ACTIVITIES 04 & 05 — SENSING & CLOUD TELEMETRY
+                </p>
+
+                <h2>Ultrasonic Sensing & Cloud Monitoring</h2>
+            </header>
+
+            <div class="content-grid reverse">
+
+                <div class="media-frame" data-video="video3">
+
+                    <video controls playsinline></video>
+
+                    <div class="media-placeholder">
+                        <span>VIDEO PLACEHOLDER</span>
+                        <small>Add your video link in script.js</small>
+                    </div>
+
+                </div>
+
+                <div class="copy">
+
+                    <p>
+                        The HC-SR04 ultrasonic sensor measured
+                        object proximity using acoustic echo timing,
+                        mapping distance thresholds to activate
+                        green, yellow, and orange indicator LEDs.
+                    </p>
+
+                    <p>
+                        Cloud IoT services synchronized live
+                        hardware state telemetry over network
+                        protocols, displaying real-time LED ON
+                        or OFF status updates on a remote dashboard.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="bottom-stripes">
+                <span class="yellow"></span>
+                <span class="green"></span>
+            </div>
+
+        </section>
+
+
+        <!-- PAGE 5: SKILLS -->
+        <section class="slide cream">
+
+            <header>
+                <p class="eyebrow orange-text">SKILL ACQUISITION</p>
+
+                <h2>Learning Outcomes & Skills</h2>
+            </header>
+
+            <div class="skills">
+
+                <article class="skill-card">
+
+                    <h3>Embedded Circuit & Logic Design</h3>
+
+                    <p>
+                        Mastered breadboard prototyping,
+                        binary state control, microcontroller
+                        pin configuration, and real-time
+                        ultrasonic sensor calibration.
+                    </p>
+
+                </article>
+
+
+                <article class="skill-card">
+
+                    <h3>Wireless & Cloud Integration</h3>
+
+                    <p>
+                        Developed end-to-end system integration
+                        skills spanning mobile app creation,
+                        Bluetooth serial data transmission,
+                        and remote cloud telemetry.
+                    </p>
+
+                </article>
+
+            </div>
+
+            <div class="bottom-stripes">
+                <span class="orange"></span>
+                <span class="purple"></span>
+            </div>
+
+        </section>
+
+
+        <!-- PAGE 6: THANK YOU -->
+        <section class="slide closing">
+
+            <div class="closing-mark">
+                <span class="orange"></span>
+                <span class="green"></span>
+                <span class="purple"></span>
+            </div>
+
+            <h1>Thank You</h1>
+
+            <p>Engineering Exploration — E-Portfolio</p>
+
+            <div class="color-stripes">
+                <span class="purple"></span>
+                <span class="green"></span>
+                <span class="orange"></span>
+                <span class="yellow"></span>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Page indicator dots -->
+    <div class="page-dots"></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
